@@ -17,7 +17,7 @@ export function histogramForBarChart(data, numTicks) {
                so that the bars don't overlap.
             */
 
-            let x0, x1;
+            var x0, x1;
             if (index === 0) {
                 x0 = element.x1 - tickSize;
                 x1 = element.x1;
