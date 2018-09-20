@@ -1,2 +1,4 @@
-export * from "./histogram";
-export {BarChart} from "./echarts_utils/components/BarChart";
+import { histogramForBarChart } from "./histogram";
+import BarChart from "./echarts_utils/components/BarChart";
+
+export default { histogramForBarChart, BarChart };
