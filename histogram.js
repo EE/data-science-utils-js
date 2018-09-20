@@ -1,4 +1,4 @@
-import * as d3 from 'd3';
+import * as d3 from "d3";
 
 export function histogramForBarChart(data, numTicks) {
     /* returns an array of pairs: [bar middle X coordinate, bar height] */
