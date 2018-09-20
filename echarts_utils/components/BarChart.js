@@ -90,10 +90,15 @@ class BarChart extends Component {
         });
     }
 
-    componentWillMount(){
-        let option = this.state.option;
-        option.series = this.config.data;
-        this.setState({option: option});
+    componentWillMount() {
+        const option = {
+            ...this.state.option,
+            series: this.config.data
+        };
+
+        this.setState({
+            option: option
+        });
     }
 
     render() {
