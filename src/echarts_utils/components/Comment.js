@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types";
 
 class Comment extends Component {
     render() {
@@ -11,5 +12,13 @@ class Comment extends Component {
         );
     }
 }
+
+Comment.propTypes = {
+    comment: PropTypes.shape({
+        title: PropTypes.string.isRequired,
+        subtitle: PropTypes.string,
+        text: PropTypes.object.string
+    }).isRequired
+};
 
 export default Comment;

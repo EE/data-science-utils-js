@@ -19,10 +19,10 @@ class BarChart extends Component {
                     ...{
                         feature: {
                             restore: {
-                                title: "odśwież",
+                                title: "odśwież"
                             },
                             saveAsImage: {
-                                title: "zapisz jako\nobraz",
+                                title: "zapisz jako\nobraz"
                             },
                             magicType: {
                                 show: true,
@@ -31,22 +31,22 @@ class BarChart extends Component {
                                     line: "liniowy",
                                     bar: "słupkowy",
                                     stack: "skumulowany",
-                                    tiled: "nieskumulowany",
-                                },
-                            },
-                        },
-                    },
+                                    tiled: "nieskumulowany"
+                                }
+                            }
+                        }
+                    }
                 },
                 label: {
                     show: true,
-                    rotate: this.config.labelRotation,
+                    rotate: this.config.labelRotation
                 },
                 legend: {
                     show: true,
                     orient: "horizontal",
                     left: "center",
                     data: this.getSeriesName(this.config.data),
-                    lineHeight: 30,
+                    lineHeight: 30
                 },
                 yAxis: [{
                     type: this.config.yAxisType,
@@ -56,41 +56,41 @@ class BarChart extends Component {
                     nameRotate: this.config.yAxisNameRotate || 90,
                     nameLocation: "middle",
                     nameTextStyle: {
-                        padding: this.config.yAxisPadding,
+                        padding: this.config.yAxisPadding
                     },
                     axisLabel: {
-                        rotate: this.config.yAxisCategoryRotation,
+                        rotate: this.config.yAxisCategoryRotation
                     }
-                }, ],
+                } ],
                 xAxis: {
                     type: this.config.xAxisType,
                     scale: true,
                     axisTick: {
-                        show: false,
+                        show: false
                     },
                     data: this.config.xAxisData,
                     name: this.config.xAxisName,
                     nameLocation: "middle",
                     nameTextStyle: {
-                        padding: 15,
-                    },
+                        padding: 15
+                    }
                 },
                 grid: {
                     left: this.config.gridLeft || "center",
-                    width: this.config.gridWidth || "60%",
+                    width: this.config.gridWidth || "60%"
                 },
-                series: [],
+                series: []
             }
         };
     }
 
-    getSeriesName = (series) => {
-        series.map((series) => {
+    getSeriesName(series) {
+        return series.map((series) => {
             return series.name;
         });
     }
 
-    componentWillMount() {
+    componentDidMount() {
         const option = {
             ...this.state.option,
             series: this.config.data
@@ -117,7 +117,7 @@ class BarChart extends Component {
 }
 
 BarChart.propTypes = {
-    config: PropTypes.object.isRequired,
+    config: PropTypes.object.isRequired
 };
 
 export default BarChart;
