@@ -3,6 +3,7 @@ import ReactEcharts from "echarts-for-react";
 import PropTypes from "prop-types";
 import Comment from "./Comment";
 import defaultToolboxProperties from "../configuration/defaultToolboxProperties";
+import '../styles/index.scss';
 
 class BarChart extends Component {
     constructor(props) {
