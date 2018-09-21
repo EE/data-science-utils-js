@@ -1,40 +1,52 @@
 @import 'comment';
+@import 'constants';
+@import 'mixins';
 
-.content-wrapper {
-  margin: 0 auto;
-  max-width: 1115px;
-}
-
-.article-wrapper {
-  background: white;
-  border-radius: 5px;
-  display: flex;
-  flex-direction: column;
-}
-
-.chart-wrapper {
-  align-items: center;
-  box-shadow: 0px 0 5px 0px #BDBDBD;
-  box-sizing: border-box;
-  border-radius: 5px;
-  justify-content: center;
-  padding: 5px 20px;
+body {
+    counter-reset: chartNameCounter;
 }
 
 .chart-name {
-  color: #757575;
-  font-weight: 200;
-  text-align: left;
-  padding-bottom: 10px;
-  width: 100%;
+    color: $medium-gray;
+    font-weight: 200;
+    text-align: left;
+    padding-bottom: 10px;
+    width: 100%;
+
+    &:before {
+        content: counter(chartNameCounter) ".\0000a0";
+        counter-increment: chartNameCounter;
+    }
 }
 
-@media all and (max-width: 767px) {
-  .article-wrapper {
-    border-radius: 0;
-  }
+.chart-wrapper {
+    align-items: center;
+    box-shadow: 0px 0 5px 0px $shadow-gray;
+    box-sizing: border-box;
+    border-radius: 5px;
+    justify-content: center;
+    padding: 5px 20px;
+}
 
-  .chart-wrapper  {
-      padding: 1px 10px;
-  }
+.content-wrapper {
+    margin: 0 auto;
+    max-width: 1115px;
+}
+
+.article-wrapper {
+    background: white;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+}
+
+
+@include mobile-view {
+    .article-wrapper {
+        border-radius: 0;
+    }
+
+    .chart-wrapper  {
+        padding: 1px 10px;
+    }
 }
