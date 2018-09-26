@@ -51,7 +51,7 @@ body {
     padding-right: 45px;
 }
 
-.article-wrapper {    
+.article-wrapper {
     @include media-max-width($mobile-max-width) {
         border-radius: 0;
     }
