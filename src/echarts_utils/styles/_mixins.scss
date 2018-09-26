@@ -1,7 +1,5 @@
-@import 'constants';
-
-@mixin mobile-view  {
-    @media all and (max-width: $mobile-max-width) {
+@mixin media-max-width($max-width)  {
+    @media all and (max-width: $max-width) {
         @content;
     }
 }

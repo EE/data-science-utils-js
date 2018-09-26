@@ -1,9 +1,15 @@
 @import 'comment';
 @import 'constants';
+@import 'header';
 @import 'mixins';
 
 body {
     counter-reset: chartNameCounter;
+}
+
+.app {
+    margin-bottom: 80px;
+    text-align: center;
 }
 
 .chart-name {
@@ -26,11 +32,20 @@ body {
     border-radius: 5px;
     justify-content: center;
     padding: 5px 20px;
+
+    @include media-max-width($mobile-max-width) {
+        padding: 1px 10px;
+    }
 }
 
 .content-wrapper {
     margin: 0 auto;
     max-width: 1115px;
+
+    @include media-max-width($mobile-max-width) {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
 }
 
 .article-wrapper {
@@ -38,15 +53,8 @@ body {
     border-radius: 5px;
     display: flex;
     flex-direction: column;
-}
 
-
-@include mobile-view {
-    .article-wrapper {
+    @include media-max-width($mobile-max-width) {
         border-radius: 0;
-    }
-
-    .chart-wrapper  {
-        padding: 1px 10px;
     }
 }
