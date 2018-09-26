@@ -1,0 +1,91 @@
+@import 'constants';
+@import 'mixins';
+
+.app-header {
+    background-image: linear-gradient(to bottom, $bg-top-gradient-color, $bg-bottom-gradient-color);
+    color: $white;
+    letter-spacing: 1px;
+    margin-bottom: -50px;
+    padding-bottom: 170px;
+    padding-top: 100px;
+
+    @include media-max-width($tablet-max-width) {
+        padding-bottom: 80px;
+        padding-top: 80px;
+    }
+
+    @include media-max-width($mobile-max-width) {
+        padding-bottom: 50px;
+        padding-top: 50px;
+    }
+}
+
+.app-title {
+    font-size: 3rem;
+    font-weight: 700;
+    text-align: left;
+
+    @include media-max-width($mobile-max-width) {
+        font-size: 2em;
+    }
+}
+
+.app-intro {
+    font-size: 1.8rem;
+    font-weight: 300;
+    line-height: 1.4;
+    text-align: left;
+
+    @include media-max-width($mobile-max-width) {
+        font-size: 1em;
+    }
+}
+
+.app-image {
+    height: 240px;
+
+    @include media-max-width($tablet-max-width) {
+        display: none;
+    }
+}
+
+.header-wrapper {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    padding-left: 10px;
+    padding-right: 10px;
+
+    @include media-max-width($tablet-max-width) {
+        flex-direction: column;
+        padding: 30px 10px;
+    }
+
+}
+
+.header-info {
+    line-height: 1.2;
+    margin-right: 40px;
+    text-align: left;
+
+    a {
+        color: $white;
+    }
+}
+
+.lab-logo-wrapper {
+    align-items: center;
+    display: flex;
+    flex: 2;
+    justify-content: flex-start;
+    margin: 3rem 0;
+
+    span {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+    .lab-logo {
+        height: 30px;
+    }
+}

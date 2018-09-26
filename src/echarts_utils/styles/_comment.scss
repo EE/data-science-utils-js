@@ -1,8 +1,13 @@
+@import 'constants';
 @import 'mixins';
 
 .comment-box {
     margin-bottom: 10vh;
     margin-top: 5vh;
+
+    @include media-max-width($mobile-max-width) {
+        padding: 5px 10px;
+    }
 }
 
 .comment-title {
@@ -22,21 +27,13 @@
     column-count: 2;
     column-gap: 50px;
     text-align: left;
+
+    @include media-max-width($mobile-max-width) {
+        column-count: 1;
+    }
 }
 
 .comment-text {
     font-weight: 200;
     line-height: 2;
-}
-
-@include mobile-view {
-    .comment-title,
-    .comment-subtitle,
-    .comment-text {
-        column-count: 1;
-    }
-
-    .comment-box {
-        padding: 5px 10px;
-    }
 }
