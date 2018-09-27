@@ -4,7 +4,7 @@ import Chart from "./Chart";
 import defaultToolboxProperties from "../configuration/defaultToolboxProperties";
 import {getSeriesName, dataToSeries} from "../tools/dataAssignmentUtils";
 
-class BarChart extends Component {
+class ScatterChart extends Component {
     constructor(props) {
         super(props);
         this.config = this.props.config;
@@ -12,7 +12,6 @@ class BarChart extends Component {
             option: {
                 animation: {},
                 tooltip: {},
-                calculable: true,
                 color: this.config.color,
                 toolbox: {
                     ...defaultToolboxProperties,
@@ -23,23 +22,9 @@ class BarChart extends Component {
                             },
                             saveAsImage: {
                                 title: "zapisz jako\nobraz"
-                            },
-                            magicType: this.config.magicType || {
-                                show: true,
-                                type: ["line", "bar", "stack", "tiled"],
-                                title: {
-                                    line: "liniowy",
-                                    bar: "słupkowy",
-                                    stack: "skumulowany",
-                                    tiled: "nieskumulowany"
-                                }
                             }
                         }
                     }
-                },
-                label: {
-                    show: true,
-                    rotate: this.config.labelRotation
                 },
                 legend: {
                     show: true,
@@ -48,40 +33,27 @@ class BarChart extends Component {
                     data: getSeriesName(this.config.data),
                     lineHeight: 30
                 },
-                yAxis: [{
-                    type: this.config.yAxisType,
-                    scale: true,
-                    data: this.config.yAxisData,
-                    name: this.config.yAxisName,
-                    nameRotate: this.config.yAxisNameRotate || 90,
-                    nameLocation: "middle",
-                    min: this.config.yAxisMin,
-                    nameTextStyle: {
-                        padding: this.config.yAxisPadding
-                    },
-                    axisLabel: {
-                        rotate: this.config.yAxisCategoryRotation
-                    }
-                } ],
                 xAxis: {
-                    type: this.config.xAxisType,
-                    scale: true,
-                    axisTick: {
-                        show: false
-                    },
-                    data: this.config.xAxisData,
                     name: this.config.xAxisName,
+                    nameRotate: this.config.xAxisNameRotate || 0,
                     nameLocation: "middle",
                     nameTextStyle: {
                         padding: 15
-                    },
-                    axisLabel: this.config.xAxisLabel
+                    }
                 },
+                yAxis: {
+                    name: this.config.yAxisName,
+                    nameRotate: this.config.yAxisNameRotate || 90,
+                    nameLocation: "middle",
+                    nameTextStyle: {
+                        padding: 45
+                    }
+                },
+                series: [],
                 grid: {
-                    left: "center",
-                    width: "60%"
-                },
-                series: []
+                    width: "60%",
+                    left: "center"
+                }
             }
         };
     }
@@ -102,8 +74,8 @@ class BarChart extends Component {
     }
 }
 
-BarChart.propTypes = {
+ScatterChart.propTypes = {
     config: PropTypes.object.isRequired
 };
 
-export default BarChart;
+export default ScatterChart;

@@ -1,11 +1,11 @@
-import React, { Component } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 
 const Comment = props => (
     <div className="comment-box">
-        <h3 className="comment-title">{this.props.comment.title}</h3>
-        <h4 className="comment-subtitle">{this.props.comment.subtitle}</h4>
-        <p className="comment-text" dangerouslySetInnerHTML={{__html: this.props.comment.text}}></p>
+        <h3 className="comment-title">{props.comment.title}</h3>
+        <h4 className="comment-subtitle">{props.comment.subtitle}</h4>
+        <p className="comment-text" dangerouslySetInnerHTML={{__html: props.comment.text}}></p>
     </div>
 );
 

@@ -27,37 +27,37 @@ body {
 }
 
 .chart-wrapper {
+    @include media-max-width($mobile-max-width) {
+        padding: 1px 10px;
+    }
+
     align-items: center;
     box-shadow: 0px 0 5px 0px $shadow-gray;
     box-sizing: border-box;
     border-radius: 5px;
     justify-content: center;
     padding: 5px 20px;
-
-    @include media-max-width($mobile-max-width) {
-        padding: 1px 10px;
-    }
 }
 
 .content-wrapper {
-    margin: 0 auto;
-    max-width: 1115px;
-    padding-left: 45px;
-    padding-right: 45px;
-
     @include media-max-width($mobile-max-width) {
         padding-left: 20px;
         padding-right: 20px;
     }
+
+    margin: 0 auto;
+    max-width: 1115px;
+    padding-left: 45px;
+    padding-right: 45px;
 }
 
-.article-wrapper {
+.article-wrapper {    
+    @include media-max-width($mobile-max-width) {
+        border-radius: 0;
+    }
+
     background: white;
     border-radius: 5px;
     display: flex;
     flex-direction: column;
-
-    @include media-max-width($mobile-max-width) {
-        border-radius: 0;
-    }
 }
