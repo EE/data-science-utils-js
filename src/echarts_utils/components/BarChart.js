@@ -78,8 +78,8 @@ class BarChart extends Component {
                     axisLabel: this.config.xAxisLabel
                 },
                 grid: {
-                    left: "center",
-                    width: "60%"
+                    left: this.config.gridLeft || "center",
+                    width: this.config.gridWidth || "60%"
                 },
                 series: []
             }
