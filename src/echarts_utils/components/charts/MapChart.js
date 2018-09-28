@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import echarts from "echarts";
-import Chart from "./Chart";
-import defaultToolboxProperties from "../configuration/defaultToolboxProperties";
-import * as colors from "../colors";
+import DescribedChart from "./DescribedChart";
+import defaultToolboxProperties from "../../configuration/defaultToolboxProperties";
+import * as colors from "../../colors";
 
 class MapChart extends Component {
     constructor(props) {
@@ -56,7 +56,7 @@ class MapChart extends Component {
                 showLegendSymbol: false,
                 roam: "scale",
                 tooltip: {},
-                aspectScale: .925,
+                aspectScale: this.config.series.aspectScale || .925,
                 silent: false,
                 label: {
                     normal: {
@@ -94,13 +94,13 @@ class MapChart extends Component {
         });
     }
 
-    formatData (data, valueName, formatter, checker) {
+    formatData (data, valueName, formatter, emptinessChecker) {
         let dataFormat = data.map((element) => {
 
             let formatterText = formatter;
             element.value = element[valueName];
 
-            if (checker(element.value)) {
+            if (emptinessChecker(element.value)) {
                 formatterText = ": brak danych";
             }
 
@@ -116,9 +116,9 @@ class MapChart extends Component {
 
     render() {
         return (
-            <Chart title={this.config.title.text}
+            <DescribedChart title={this.config.title.text}
                 option={this.state.option}
-                comment={this.config.comment}
+                source={this.config.source}
                 height={"700px"} />
         );
     }
