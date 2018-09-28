@@ -1,20 +1,17 @@
 @import 'constants';
 @import 'mixins';
 
-.chart-wrapper {
-    @include media-max-width($mobile-max-width) {
-        padding: 1px 10px;
+.widget {
+    & + .widget {
+        margin-top: 150px;
     }
 
-    align-items: center;
-    border-radius: 5px;
-    box-shadow: 0 0 5px 0 $shadow-gray;
-    box-sizing: border-box;
-    justify-content: center;
-    padding: 15px 50px 100px;
+    .widget__columns & {
+        margin-top: 0;
+    }
 }
 
-.chart__name {
+.widget__name {
     color: $medium-gray;
     font-weight: 700;
     margin-left: auto;
@@ -25,27 +22,17 @@
     width: 100%;
 }
 
-.chart__source {
+.widget__source {
     color: $shadow-gray;
     text-align: center;
 }
 
-.chart {
-    & + .chart {
-        margin-top: 150px;
-    }
-
-    .chart__columns & {
-        margin-top: 0;
-    }
-}
-
-.chart__columns {
+.widget__columns {
     column-count: 2;
     column-gap: 50px;
 }
 
-.chart__number {
+.widget__number {
     font-size: 6rem;
     font-weight: bold;
     margin-bottom: 20px;
@@ -54,7 +41,7 @@
     max-width: 750px;
 }
 
-.chart__big-text {
+.widget__big-text {
     font-size: 2rem;
     font-weight: 400;
     margin-left: auto;

@@ -48,6 +48,6 @@
         "build": "webpack",
         "lint": "eslint --fix ./src/**",
         "test": "jest",
-        "sass-lint": "sass-lint  -c .sass-lint.yml 'src/echarts_utils/styles/*.scss' -v -q"
+        "sass-lint": "sass-lint  -c .sass-lint.yml 'src/styles/*.scss' -v -q"
     }
 }

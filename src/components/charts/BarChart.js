@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-import DescribedChart from "./DescribedChart";
+import ChartWithDescription from "./ChartWithDescription";
 import defaultToolboxProperties from "../../configuration/defaultToolboxProperties";
 import {getSeriesName, dataToSeries} from "../../tools/dataAssignmentUtils";
 
@@ -94,7 +94,7 @@ class BarChart extends Component {
 
     render() {
         return (
-            <DescribedChart title={this.config.title.text}
+            <ChartWithDescription title={this.config.title.text}
                 option={this.state.option}
                 source={this.config.source}
                 height={"500px"} />

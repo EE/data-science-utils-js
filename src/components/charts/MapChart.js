@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import echarts from "echarts";
-import DescribedChart from "./DescribedChart";
+import ChartWithDescription from "./ChartWithDescription";
 import defaultToolboxProperties from "../../configuration/defaultToolboxProperties";
 import * as colors from "../../colors";
 
@@ -116,7 +116,7 @@ class MapChart extends Component {
 
     render() {
         return (
-            <DescribedChart title={this.config.title.text}
+            <ChartWithDescription title={this.config.title.text}
                 option={this.state.option}
                 source={this.config.source}
                 height={"700px"} />

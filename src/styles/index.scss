@@ -1,8 +1,8 @@
-@import 'charts';
 @import 'constants';
 @import 'header';
 @import 'mixins';
 @import 'text-boxes';
+@import 'widgets';
 
 body {
     counter-reset: chartNameCounter;
@@ -28,13 +28,19 @@ body {
 .article-wrapper {
     @include media-max-width($mobile-max-width) {
         border-radius: 0;
+        padding: 1px 10px;
     }
 
+    align-items: center;
     background: $white;
     border-radius: 5px;
+    box-shadow: 0 0 5px 0 $shadow-gray;
+    box-sizing: border-box;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     margin-bottom: 100px;
+    padding: 15px 50px 100px;
 }
 
 a {

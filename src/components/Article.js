@@ -11,12 +11,10 @@ class Article extends Component {
     render() {
         return (
             <article className="article-wrapper">
-                <div className="chart-wrapper">
-                    { typeof this.config !== "undefined" && this.config.comment !== null &&
-                        <Comment comment={this.config.comment}/>
-                    }
-                    {this.props.children}
-                </div>
+                { typeof this.config !== "undefined" && this.config.comment !== null &&
+                    <Comment comment={this.config.comment}/>
+                }
+                {this.props.children}
             </article>
         );
     }

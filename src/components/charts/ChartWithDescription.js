@@ -3,23 +3,23 @@ import ReactEcharts from "echarts-for-react";
 import PropTypes from "prop-types";
 import "../../styles/index.scss";
 
-const DescribedChart = props => (
-    <div className="chart">
+const ChartWithDescription = props => (
+    <div className="widget">
         <ReactEcharts option={props.option}
             lazyUpdate={true}
             style={{height: props.height, width: "100%"}}/>
-        <h4 className="chart__name">{props.title}</h4>
+        <h4 className="widget__name">{props.title}</h4>
         { props.source !== null &&
-            <h6 className="chart__source">{props.source}</h6>
+            <h6 className="widget__source">{props.source}</h6>
         }
     </div>
 );
 
-DescribedChart.propTypes = {
+ChartWithDescription.propTypes = {
     title: PropTypes.string.isRequired,
     height: PropTypes.string.isRequired,
     option: PropTypes.object.isRequired,
     source: PropTypes.string.isRequired
 };
 
-export default DescribedChart;
+export default ChartWithDescription;
