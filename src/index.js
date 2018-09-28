@@ -1,7 +1,16 @@
 import { histogramForBarChart } from "./histogram";
-import * as colors from "./echarts_utils/colors";
-import createNumberFormatter from "./echarts_utils/tools/formatters";
-import BarChart from "./echarts_utils/components/BarChart";
-import Header from "./echarts_utils/components/Header";
+import * as colors from "./colors";
+import createNumberFormatter from "./tools/formatters";
+import Article from "./components/Article";
+import BarChart from "./components/charts/BarChart";
+import Header from "./components/Header";
+import MapChart from "./components/charts/MapChart";
+import NumberWidget from "./components/NumberWidget";
+import Paragraph from "./components/Paragraph";
+import ScatterChart from "./components/charts/ScatterChart";
 
-export default { histogramForBarChart, BarChart, Header, createNumberFormatter, colors };
+export default {
+    colors,
+    createNumberFormatter, histogramForBarChart,
+    Article, BarChart, Header, MapChart, NumberWidget, Paragraph, ScatterChart
+};

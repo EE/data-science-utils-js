@@ -2,13 +2,6 @@
 @import 'mixins';
 
 .app-header {
-    background-image: linear-gradient(to bottom, $bg-top-gradient-color, $bg-bottom-gradient-color);
-    color: $white;
-    letter-spacing: 1px;
-    margin-bottom: -50px;
-    padding-bottom: 170px;
-    padding-top: 100px;
-
     @include media-max-width($tablet-max-width) {
         padding-bottom: 80px;
         padding-top: 80px;
@@ -18,49 +11,55 @@
         padding-bottom: 50px;
         padding-top: 50px;
     }
+
+    background-image: linear-gradient(to bottom, $bg-top-gradient-color, $bg-bottom-gradient-color);
+    color: $white;
+    letter-spacing: 1px;
+    margin-bottom: -50px;
+    padding-bottom: 170px;
+    padding-top: 100px;
 }
 
 .app-title {
+    @include media-max-width($mobile-max-width) {
+        font-size: 2.4rem;
+    }
+
     font-size: 3rem;
     font-weight: 700;
     text-align: left;
-
-    @include media-max-width($mobile-max-width) {
-        font-size: 2em;
-    }
 }
 
 .app-intro {
+    @include media-max-width($mobile-max-width) {
+        font-size: 1em;
+    }
+
     font-size: 1.8rem;
     font-weight: 300;
     line-height: 1.4;
     text-align: left;
-
-    @include media-max-width($mobile-max-width) {
-        font-size: 1em;
-    }
 }
 
 .app-image {
-    height: 240px;
-
     @include media-max-width($tablet-max-width) {
         display: none;
     }
+
+    height: 240px;
 }
 
 .header-wrapper {
-    align-items: center;
-    display: flex;
-    justify-content: space-between;
-    padding-left: 10px;
-    padding-right: 10px;
-
     @include media-max-width($tablet-max-width) {
         flex-direction: column;
         padding: 30px 10px;
     }
 
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 .header-info {

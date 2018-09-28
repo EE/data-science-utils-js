@@ -1,9 +1,8 @@
 import React, { Component } from "react";
-import ReactEcharts from "echarts-for-react";
 import PropTypes from "prop-types";
-import Comment from "./Comment";
-import defaultToolboxProperties from "../configuration/defaultToolboxProperties";
-import "../styles/index.scss";
+import ChartWithDescription from "./ChartWithDescription";
+import defaultToolboxProperties from "../../configuration/defaultToolboxProperties";
+import {getSeriesName, dataToSeries} from "../../tools/dataAssignmentUtils";
 
 class BarChart extends Component {
     constructor(props) {
@@ -25,7 +24,7 @@ class BarChart extends Component {
                             saveAsImage: {
                                 title: "zapisz jako\nobraz"
                             },
-                            magicType: {
+                            magicType: this.config.magicType || {
                                 show: true,
                                 type: ["line", "bar", "stack", "tiled"],
                                 title: {
@@ -46,7 +45,7 @@ class BarChart extends Component {
                     show: true,
                     orient: "horizontal",
                     left: "center",
-                    data: this.getSeriesName(this.config.data),
+                    data: getSeriesName(this.config.data),
                     lineHeight: 30
                 },
                 yAxis: [{
@@ -56,6 +55,7 @@ class BarChart extends Component {
                     name: this.config.yAxisName,
                     nameRotate: this.config.yAxisNameRotate || 90,
                     nameLocation: "middle",
+                    min: this.config.yAxisMin,
                     nameTextStyle: {
                         padding: this.config.yAxisPadding
                     },
@@ -74,7 +74,8 @@ class BarChart extends Component {
                     nameLocation: "middle",
                     nameTextStyle: {
                         padding: 15
-                    }
+                    },
+                    axisLabel: this.config.xAxisLabel
                 },
                 grid: {
                     left: this.config.gridLeft || "center",
@@ -85,34 +86,18 @@ class BarChart extends Component {
         };
     }
 
-    getSeriesName(series) {
-        return series.map((series) => {
-            return series.name;
-        });
-    }
-
     componentDidMount() {
-        const option = {
-            ...this.state.option,
-            series: this.config.data
-        };
-
         this.setState({
-            option: option
+            option: dataToSeries(this.state.option, this.config.data)
         });
     }
 
     render() {
         return (
-            <article className="article-wrapper">
-                <div className="chart-wrapper">
-                    <h2 className="chart-name">{this.config.title.text}</h2>
-                    <ReactEcharts option={this.state.option}
-                        lazyUpdate={true}
-                        style={{height: "500px", width: "100%"}}/>
-                </div>
-                <Comment comment={this.config.comment}/>
-            </article>
+            <ChartWithDescription title={this.config.title.text}
+                option={this.state.option}
+                source={this.config.source}
+                height={"500px"} />
         );
     }
 }

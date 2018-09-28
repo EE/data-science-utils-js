@@ -40,11 +40,14 @@
         "uglifyjs-webpack-plugin": "^2.0.1",
         "url-loader": "^1.1.1",
         "webpack": "^4.19.1",
-        "webpack-cli": "^3.1.0"
+        "webpack-cli": "^3.1.0",
+        "sass": "^1.14.0",
+        "sass-lint": "^1.12.1"
     },
     "scripts": {
         "build": "webpack",
         "lint": "eslint --fix ./src/**",
-        "test": "jest"
+        "test": "jest",
+        "sass-lint": "sass-lint  -c .sass-lint.yml 'src/styles/*.scss' -v -q"
     }
 }
