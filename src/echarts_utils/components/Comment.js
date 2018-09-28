@@ -1,17 +1,14 @@
-import React, { Component } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 
-class Comment extends Component {
-    render() {
-        return (
-            <div className="comment-box">
-                <h3 className="comment-title">{this.props.comment.title}</h3>
-                <h4 className="comment-subtitle">{this.props.comment.subtitle}</h4>
-                <p className="comment-text" dangerouslySetInnerHTML={{__html: this.props.comment.text}}></p>
-            </div>
-        );
-    }
-}
+const Comment = props => (
+    <div className="comment-box">
+        <h3 className="comment-title">{props.comment.title}</h3>
+        <h4 className="comment-subtitle">{props.comment.subtitle}</h4>
+        <p className="comment-text" dangerouslySetInnerHTML={{__html: props.comment.text}}></p>
+    </div>
+);
+
 
 Comment.propTypes = {
     comment: PropTypes.shape({

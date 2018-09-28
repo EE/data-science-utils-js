@@ -2,12 +2,12 @@
 @import 'mixins';
 
 .comment-box {
-    margin-bottom: 10vh;
-    margin-top: 5vh;
-
     @include media-max-width($mobile-max-width) {
         padding: 5px 10px;
     }
+
+    margin-bottom: 10vh;
+    margin-top: 5vh;
 }
 
 .comment-title {
@@ -24,13 +24,13 @@
 
 .comment-subtitle,
 .comment-text {
-    column-count: 2;
-    column-gap: 50px;
-    text-align: left;
-
     @include media-max-width($mobile-max-width) {
         column-count: 1;
     }
+
+    column-count: 2;
+    column-gap: 50px;
+    text-align: left;
 }
 
 .comment-text {
