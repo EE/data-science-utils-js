@@ -1,0 +1,55 @@
+@import 'constants';
+@import 'header';
+@import 'mixins';
+@import 'text-boxes';
+@import 'widgets';
+
+body {
+    counter-reset: chartNameCounter;
+}
+
+.app {
+    margin-bottom: 100px;
+    text-align: center;
+}
+
+.content-wrapper {
+    @include media-max-width($mobile-max-width) {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    margin: 0 auto;
+    max-width: 1115px;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.article-wrapper {
+    @include media-max-width($mobile-max-width) {
+        border-radius: 0;
+        padding: 1px 10px;
+    }
+
+    align-items: center;
+    background: $white;
+    border-radius: 5px;
+    box-shadow: 0 0 5px 0 $shadow-gray;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 100px;
+    padding: 15px 50px 100px;
+}
+
+a {
+    color: $link-color;
+    font-weight: bold;
+    text-decoration: none;
+    transition: .3s ease;
+
+    &:hover {
+        color: $link-hover-color;
+    }
+}

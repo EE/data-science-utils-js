@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-import Chart from "./Chart";
-import defaultToolboxProperties from "../configuration/defaultToolboxProperties";
-import {getSeriesName, dataToSeries} from "../tools/dataAssignmentUtils";
+import ChartWithDescription from "./ChartWithDescription";
+import defaultToolboxProperties from "../../configuration/defaultToolboxProperties";
+import {getSeriesName, dataToSeries} from "../../tools/dataAssignmentUtils";
 
 class ScatterChart extends Component {
     constructor(props) {
@@ -66,9 +66,9 @@ class ScatterChart extends Component {
 
     render() {
         return (
-            <Chart title={this.config.title.text}
+            <ChartWithDescription title={this.config.title.text}
                 option={this.state.option}
-                comment={this.config.comment}
+                source={this.config.source}
                 height={"500px"} />
         );
     }
