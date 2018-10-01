@@ -8,6 +8,12 @@
 
     margin-bottom: 100px;
     margin-top: 50px;
+
+    .article-wrapper > & {
+        &:first-child {
+            margin-top: 0;
+        }
+    }
 }
 
 .text-box__title {
