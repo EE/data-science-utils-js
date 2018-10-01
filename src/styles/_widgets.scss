@@ -2,6 +2,9 @@
 @import 'mixins';
 
 .widget {
+    max-width: 100%;
+    min-width: 85%;
+
     & + .widget {
         margin-top: 150px;
     }
