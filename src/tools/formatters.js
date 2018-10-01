@@ -7,7 +7,7 @@
         formatter: createNumberFormatter({
          defaultText: 'brak danych',
         })
-    }    
+    }
 */
 
 export const createNumberFormatter = (options) => {
