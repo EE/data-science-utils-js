@@ -59,9 +59,7 @@ class BarChart extends Component {
                     nameTextStyle: {
                         padding: this.config.yAxisPadding
                     },
-                    axisLabel: {
-                        rotate: this.config.yAxisCategoryRotation
-                    }
+                    axisLabel: this.config.yAxisLabel
                 } ],
                 xAxis: {
                     type: this.config.xAxisType,
