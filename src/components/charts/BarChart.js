@@ -14,7 +14,7 @@ class BarChart extends Component {
                 tooltip: {},
                 calculable: true,
                 color: this.config.color,
-                toolbox: {
+                toolbox: this.config.toolbox || {
                     ...defaultToolboxProperties,
                     ...{
                         feature: {
