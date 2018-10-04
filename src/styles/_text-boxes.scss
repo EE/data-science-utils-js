@@ -55,12 +55,6 @@
 
 .text-box__subtitle,
 .text-box__text {
-    @include media-max-width($mobile-max-width) {
-        column-count: 1;
-    }
-
-    column-count: 2;
-    column-gap: 50px;
     text-align: left;
 }
 
